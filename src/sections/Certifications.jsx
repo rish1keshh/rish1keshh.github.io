@@ -19,7 +19,7 @@ const Certifications = () => {
       name: 'AWS Certified Cloud Practitioner',
       issuer: 'Amazon Web Services (AWS)',
       date: 'August 2025',
-      credentialId: 'AWS001234567',
+      credentialId: 'AWS05318847',
       credentialUrl: 'https://www.credly.com/badges/1a424e43-7d77-484b-be66-ec2b32137194/public_url',
       status: 'Active',
       description: 'Foundational certification demonstrating cloud computing knowledge and AWS platform expertise.',
