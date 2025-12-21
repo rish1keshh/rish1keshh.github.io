@@ -35,7 +35,7 @@ const Certifications = () => {
     <Section
       id="certifications"
       title="Certifications"
-      subtitle="Professional certifications and industry credentials"
+      subtitle="Certified. Verified. Ready."
     >
       {/* Active Certifications */}
       <div className="mb-12">
