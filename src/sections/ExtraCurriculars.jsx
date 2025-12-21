@@ -56,7 +56,7 @@ const ExtraCurriculars = () => {
     <Section
       id="extracurriculars"
       title="Extra-Curriculars"
-      subtitle="Hobbies, interests, and activities beyond academics"
+      subtitle="Beyond the Keyboard"
       className="bg-navy-light/30 relative"
     >
       {/* Decorative puzzle grids */}
