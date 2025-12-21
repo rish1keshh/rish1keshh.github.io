@@ -38,7 +38,7 @@ const WorkExperience = () => {
     <Section
       id="experience"
       title="Work Experience"
-      subtitle="Professional experience in cybersecurity and IT security roles"
+      subtitle="Building Skills That Matter"
     >
       <div className="relative">
         {/* Timeline line */}
