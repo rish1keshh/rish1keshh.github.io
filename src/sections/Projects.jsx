@@ -78,7 +78,7 @@ const Projects = () => {
     <Section
       id="projects"
       title="Projects"
-      subtitle="Cybersecurity projects and hands-on security implementations"
+      subtitle="Where Curiosity Meets Controlled Destruction"
       className="bg-navy-light/30 relative"
     >
       {/* Background pattern */}
