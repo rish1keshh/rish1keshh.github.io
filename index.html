@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/rg_logo.png" />
+
+    <!-- Viewport configuration for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+
+    <!-- SEO Meta Tags -->
+    <title>Rishikesh Galande</title>
+    <meta name="description" content="Cybersecurity professional portfolio focused on defense, security engineering, and blue team operations" />
+
+    <!-- iOS-specific meta tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="RG Portfolio" />
+
+    <!-- Android-specific meta tags -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#0A192F" />
+
+    <!-- Touch Icons for iOS -->
+    <link rel="apple-touch-icon" href="/shield.svg" />
+
+    <!-- Prevent text size adjustment on orientation change -->
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Content Security Policy (CSP) - Fallback if server headers not configured -->
+    <!-- Note: 'unsafe-inline' is used for React's inline styles. For production, consider implementing nonce-based CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://api.ipify.org https://geo.ipify.org; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests">
+
+    <!-- Additional Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

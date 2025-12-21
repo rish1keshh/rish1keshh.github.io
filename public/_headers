@@ -1,0 +1,50 @@
+# Security Headers for Netlify/CDN deployment
+# This file configures HTTP security headers to protect against common web attacks
+
+/*
+  # Content Security Policy (CSP) - Prevents XSS attacks
+  # Restricts sources for scripts, styles, images, etc.
+  # Note: 'unsafe-inline' is required for React inline styles. Consider nonce-based CSP for stricter security
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://api.ipify.org https://geo.ipify.org; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests
+
+  # CSP Reporting (Report-Only for monitoring violations without breaking functionality)
+  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self'; style-src 'self'; report-uri /csp-violation-report
+
+  # Prevent MIME type sniffing
+  X-Content-Type-Options: nosniff
+
+  # Enable XSS protection (legacy browsers)
+  X-XSS-Protection: 1; mode=block
+
+  # Prevent clickjacking attacks
+  X-Frame-Options: DENY
+
+  # Referrer Policy - Control referrer information
+  Referrer-Policy: strict-origin-when-cross-origin
+
+  # Permissions Policy - Control browser features
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()
+
+  # Strict Transport Security (HSTS) - Force HTTPS
+  # max-age=31536000 (1 year), includeSubDomains, preload
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+  # Prevent browsers from performing DNS prefetching
+  X-DNS-Prefetch-Control: off
+
+  # Download options for IE
+  X-Download-Options: noopen
+
+  # Prevent Adobe Flash and PDF from accessing content
+  X-Permitted-Cross-Domain-Policies: none
+
+  # Cache control for security-sensitive content
+  Cache-Control: public, max-age=31536000, immutable
+
+# Service Worker (if added later)
+/sw.js
+  Cache-Control: no-cache, no-store, must-revalidate
+
+# HTML files - no cache for freshness
+/*.html
+  Cache-Control: no-cache, no-store, must-revalidate
