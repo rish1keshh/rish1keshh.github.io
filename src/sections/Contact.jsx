@@ -154,7 +154,7 @@ const Contact = () => {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-electric-blue to-cyan-bright mx-auto mb-6"></div>
           <p className="text-text-slate text-lg max-w-2xl mx-auto">
-            Interested in collaborating or have a security opportunity? Feel free to reach out through any of the channels below.
+            Opportunities, Questions, or Random Memes Welcome.
           </p>
         </div>
 
