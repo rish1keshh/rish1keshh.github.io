@@ -40,7 +40,7 @@ const Education = () => {
     <Section
       id="education"
       title="Education"
-      subtitle="Academic foundation in cybersecurity and information security"
+      subtitle="Where I Learned to Break (and Fix) Things"
       className="bg-navy-light/30 relative"
     >
       {/* Background pattern */}
