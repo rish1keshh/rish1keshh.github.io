@@ -19,19 +19,6 @@ const WorkExperience = () => {
       ],
       technologies: ['Splunk', 'Wireshark', 'Canvas LMS', 'Python'],
     },
-    {
-      title: 'Information Technology Intern',
-      company: 'Sansach Technologies',
-      location: 'Thane, India',
-      period: 'Mar 2023 - Aug 2023',
-      type: 'Internship',
-      achievements: [
-        'Developed and optimized Python scripts to automate the parsing of system logs and performance data, reducing manual analysis time and contributing to a 15% improvement in critical system operation speed',
-        'Contributed to secure software development by participating in code reviews across 5+ Agile sprints, identifying potential logic flaws and helping to reduce bug reports by 10% prior to deployment',
-        'Assisted in troubleshooting and resolving system issues by analyzing MySQL database logs and application performance metrics, enhancing overall system reliability and stability',
-      ],
-      technologies: ['Python', 'MySQL', 'System Logs', 'Agile'],
-    },
   ];
 
   return (

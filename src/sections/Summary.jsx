@@ -388,7 +388,13 @@ const Summary = ({ onTypingComplete, typingComplete }) => {
               transitionDelay: '0.8s'
             }}
           >
-            <Button variant="primary">Download Resume</Button>
+            <a
+              href="/Rishikesh_Galande_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="primary">Download Resume</Button>
+            </a>
             <a
               href="https://linkedin.com/in/rish1kesh"
               target="_blank"
