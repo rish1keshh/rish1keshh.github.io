@@ -315,13 +315,10 @@ const Contact = () => {
             <p className="text-text-light">
               Looking for my resume?{' '}
               <a
-                href="#"
+                href="/Rishikesh_Galande_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-electric-blue hover:text-cyan-bright transition-colors font-semibold"
-                onClick={(e) => {
-                  e.preventDefault();
-                  // Handle resume download
-                  alert('Add your resume download link here');
-                }}
               >
                 Download it here
               </a>
