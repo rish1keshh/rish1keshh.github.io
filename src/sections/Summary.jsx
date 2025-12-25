@@ -376,7 +376,7 @@ const Summary = ({ onTypingComplete, typingComplete }) => {
               transitionDelay: '0.5s'
             }}
           >
-            I'm a cybersecurity graduate student at Penn State who's still early in my career and genuinely hungry to learn. I don't have formal work experience yet, but I spend a lot of my time building labs, testing defenses, breaking things on purpose, and understanding how attacks actually work. I'm especially drawn to blue teaming and incident response because I like being the person who figures things out when something goes wrong. I'm not looking for shortcuts or titles, just a real chance to learn, work hard, and get better every day. As Cristiano Ronaldo said, "Talent without working hard is nothing."
+            I am a cybersecurity graduate student at Penn State focused on blue team operations and threat detection. I learn by building labs, breaking systems safely, and studying how real attacks unfold. I am early in my career, deeply curious, and committed to growing into a security professional who defends with intention and clarity.
           </p>
 
           {/* Buttons with enhanced effects - Stack on mobile, side-by-side on larger screens */}

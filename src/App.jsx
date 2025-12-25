@@ -8,6 +8,7 @@ import Summary from './sections/Summary';
 import Education from './sections/Education';
 import WorkExperience from './sections/WorkExperience';
 import Projects from './sections/Projects';
+import ApproachToDefense from './sections/ApproachToDefense';
 import Certifications from './sections/Certifications';
 import ExtraCurriculars from './sections/ExtraCurriculars';
 import Contact from './sections/Contact';
@@ -56,6 +57,7 @@ function App() {
           <Education />
           <WorkExperience />
           <Projects />
+          <ApproachToDefense />
           <Certifications />
           <ExtraCurriculars />
           <Contact />
