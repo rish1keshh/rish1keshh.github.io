@@ -37,7 +37,16 @@
 @layer components {
   /* Glassmorphism effect */
   .glass {
-    @apply bg-white/5 backdrop-blur-lg border border-white/10;
+    /* Fallback for browsers without backdrop-filter support */
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    /* Progressive enhancement for modern browsers */
+    @supports (backdrop-filter: blur(0px)) or (-webkit-backdrop-filter: blur(0px)) {
+      background-color: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
   }
 
   .glass-hover {

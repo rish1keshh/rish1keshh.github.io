@@ -19,7 +19,7 @@ const Button = ({
       className={`
         px-6 py-3 rounded-lg font-medium
         transition-all duration-300
-        flex items-center gap-2
+        flex items-center space-x-2
         ${variants[variant]}
         ${className}
       `}

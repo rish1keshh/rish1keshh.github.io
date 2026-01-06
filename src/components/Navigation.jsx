@@ -56,7 +56,7 @@ const Navigation = () => {
       >
         <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center gap-2 md:gap-3">
+          <div className="flex items-center space-x-2 md:space-x-3">
             <img src="/rg_logo.png" alt="RG Logo" className="w-10 h-10 md:w-12 md:h-12" />
             {/* Responsive logo text */}
             <span className="text-base md:text-xl font-bold text-white">
@@ -66,7 +66,7 @@ const Navigation = () => {
           </div>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center gap-6 lg:gap-8">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navItems.map((item) => (
               <button
                 key={item.id}
@@ -140,7 +140,7 @@ const Navigation = () => {
           </div>
 
           {/* Mobile menu items */}
-          <div className="flex flex-col p-4 gap-2">
+          <div className="flex flex-col p-4 space-y-2">
             {navItems.map((item) => (
               <button
                 key={item.id}
