@@ -22,13 +22,19 @@ const Certifications = () => {
       credentialId: 'AWS05318847',
       credentialUrl: 'https://www.credly.com/badges/1a424e43-7d77-484b-be66-ec2b32137194/public_url',
       status: 'Active',
-      description: 'Foundational certification demonstrating cloud computing knowledge and AWS platform expertise.',
+      description: 'Foundational cloud security certification covering AWS security services, shared responsibility model, identity and access management, and cloud compliance frameworks.',
       logo: '/aws-cloud-practitioner-logo.png',
     },
   ];
 
   const inProgress = [
-    'CompTIA CySA+ (Cybersecurity Analyst)',
+    {
+      name: 'Cisco CCNA',
+      issuer: 'Cisco',
+      status: 'In Progress',
+      description: 'Foundational networking certification covering network security fundamentals, threat mitigation, secure network access, and implementing security best practices across network infrastructure.',
+      logo: '/ccna-logo.png',
+    },
   ];
 
   return (
@@ -105,17 +111,35 @@ const Certifications = () => {
           <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse-slow"></div>
           In Progress
         </h3>
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-2 gap-6">
           {inProgress.map((cert, index) => (
             <Card
               key={index}
-              variant="bordered"
+              glow
+              variant="gradient"
               className="hover:scale-[1.02] transition-all duration-300 animate-fade-in-up"
               style={{ animationDelay: `${(certifications.length + index) * 0.1}s` }}
             >
-              <div className="flex items-start gap-3">
-                <span className="text-yellow-400 text-xl">⏳</span>
-                <p className="text-text-light">{cert}</p>
+              <div className="flex items-start gap-4">
+                {cert.logo ? (
+                  <div className="w-20 h-20 flex items-center justify-center flex-shrink-0 bg-white rounded-lg p-2">
+                    <img src={cert.logo} alt={`${cert.name} logo`} className="w-full h-full object-contain" />
+                  </div>
+                ) : (
+                  <div className="w-16 h-16 hexagon bg-electric-blue/20 flex items-center justify-center flex-shrink-0">
+                    <ShieldIcon className="text-electric-blue" size={32} />
+                  </div>
+                )}
+                <div className="flex-1">
+                  <h4 className="text-xl font-bold text-white mb-1">{cert.name}</h4>
+                  <p className="text-electric-blue mb-2">{cert.issuer}</p>
+                  <p className="text-text-slate text-sm mb-3">{cert.description}</p>
+                  <div className="mt-3 flex items-center gap-3">
+                    <span className="inline-block px-3 py-1 bg-yellow-500/20 text-yellow-400 rounded-full text-xs">
+                      {cert.status}
+                    </span>
+                  </div>
+                </div>
               </div>
             </Card>
           ))}
