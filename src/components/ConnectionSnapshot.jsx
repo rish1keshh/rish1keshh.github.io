@@ -102,14 +102,35 @@ const ConnectionSnapshot = () => {
     };
 
     // Detect browser engine/family with sanitization
-    const detectBrowser = () => {
+    const detectBrowser = async () => {
       try {
         const ua = sanitizeString(navigator.userAgent);
-        if (/Edg/i.test(ua)) return 'Edge (Chromium)';
-        if (/Chrome/i.test(ua) && !/Edg/i.test(ua)) return 'Chrome (Blink)';
-        if (/Safari/i.test(ua) && !/Chrome/i.test(ua)) return 'Safari (WebKit)';
-        if (/Firefox/i.test(ua)) return 'Firefox (Gecko)';
+
+        // Check for Brave first (Brave mimics Chrome but has navigator.brave)
+        if (navigator.brave && typeof navigator.brave.isBrave === 'function') {
+          try {
+            const isBrave = await navigator.brave.isBrave();
+            if (isBrave) return 'Brave (Chromium)';
+          } catch (e) {
+            // If brave check fails, continue with other checks
+          }
+        }
+
+        // Check for Edge (must come before Chrome check)
+        if (/Edg/i.test(ua) || /Edge/i.test(ua)) return 'Edge (Chromium)';
+
+        // Check for Opera
         if (/Opera|OPR/i.test(ua)) return 'Opera (Blink)';
+
+        // Check for Chrome (after Brave, Edge, and Opera)
+        if (/Chrome/i.test(ua)) return 'Chrome (Blink)';
+
+        // Check for Safari (must come after Chrome check since Chrome includes Safari in UA)
+        if (/Safari/i.test(ua)) return 'Safari (WebKit)';
+
+        // Check for Firefox
+        if (/Firefox/i.test(ua)) return 'Firefox (Gecko)';
+
         return 'Unknown';
       } catch (error) {
         return 'Unknown';
@@ -198,11 +219,12 @@ const ConnectionSnapshot = () => {
     // Set all metadata
     const initMetadata = async () => {
       const ip = await fetchIP();
+      const browser = await detectBrowser();
       setMetadata({
         ip,
         device: detectDevice(),
         os: detectOS(),
-        browser: detectBrowser(),
+        browser,
         timezone: getTimezone(),
       });
     };
