@@ -102,7 +102,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // For now, just create a mailto link with the form data
-    const mailtoLink = `mailto:rishigalande23@icloud.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+    const mailtoLink = `mailto:r.galande@outlook.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
     window.location.href = mailtoLink;
   };
 
@@ -115,8 +115,8 @@ const Contact = () => {
         </svg>
       ),
       label: 'Email',
-      value: 'rishigalande23@icloud.com',
-      href: 'mailto:rishigalande23@icloud.com',
+      value: 'r.galande@outlook.com',
+      href: 'mailto:r.galande@outlook.com',
       ariaLabel: 'Send email'
     },
     {

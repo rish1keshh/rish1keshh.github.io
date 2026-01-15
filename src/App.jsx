@@ -82,7 +82,7 @@ function App() {
                 LinkedIn
               </a>
               <a
-                href="mailto:rishigalande23@icloud.com"
+                href="mailto:r.galande@outlook.com"
                 className="text-text-slate hover:text-electric-blue transition-colors text-sm sm:text-base py-2"
                 aria-label="Email"
               >
