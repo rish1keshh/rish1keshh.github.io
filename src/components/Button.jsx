@@ -8,9 +8,9 @@ const Button = ({
   icon = null
 }) => {
   const variants = {
-    primary: 'bg-electric-blue text-navy-dark hover:bg-electric-blue/90 btn-pulse ripple glow-hover',
-    secondary: 'glass glass-hover text-electric-blue border-electric-blue/50 ripple border-neon',
-    ghost: 'text-electric-blue hover:bg-electric-blue/10 ripple',
+    primary: 'bg-electric-blue text-navy-dark hover:bg-electric-blue/90 btn-pulse ripple glow-hover border border-transparent',
+    secondary: 'glass glass-hover text-electric-blue border border-electric-blue/50 ripple border-neon',
+    ghost: 'text-electric-blue hover:bg-electric-blue/10 ripple border border-transparent',
   };
 
   return (

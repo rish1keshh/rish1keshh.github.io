@@ -367,6 +367,43 @@ const Summary = ({ onTypingComplete, typingComplete }) => {
             Blue Team Operations
           </p>
 
+          {/* Certification Badges */}
+          <div
+            className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mb-4 md:mb-6 px-4 transition-all duration-1000 ease-out"
+            style={{
+              opacity: typingComplete ? 1 : 0,
+              transform: typingComplete ? 'translateY(0)' : 'translateY(20px)',
+              transitionDelay: '0.35s'
+            }}
+          >
+            <a
+              href="https://www.credly.com/badges/5a125f3c-d389-4062-a648-3d0381a489de"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group"
+              title="CompTIA Security+"
+            >
+              <img
+                src="/security-plus-logo.png"
+                alt="CompTIA Security+ Certified"
+                className="w-14 h-14 sm:w-16 sm:h-16 object-contain transition-transform duration-300 group-hover:scale-110"
+              />
+            </a>
+            <a
+              href="https://www.credly.com/badges/1a424e43-7d77-484b-be66-ec2b32137194/public_url"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group"
+              title="AWS Certified Cloud Practitioner"
+            >
+              <img
+                src="/aws-cloud-practitioner-logo.png"
+                alt="AWS Certified Cloud Practitioner"
+                className="w-14 h-14 sm:w-16 sm:h-16 object-contain transition-transform duration-300 group-hover:scale-110"
+              />
+            </a>
+          </div>
+
           {/* Description */}
           <p
             className="text-sm sm:text-base md:text-lg text-text-slate max-w-2xl mx-auto mb-6 md:mb-8 px-4 text-justify transition-all duration-1000 ease-out"
