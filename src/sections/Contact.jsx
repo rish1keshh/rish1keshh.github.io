@@ -15,7 +15,6 @@ const Contact = () => {
   const [locationPhraseIndex, setLocationPhraseIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [showCursor, setShowCursor] = useState(true);
-  const [hasViewed, setHasViewed] = useState(false);
 
   const locationPhrases = ['127.0.0.1', 'kidding', 'State College, PA'];
 
@@ -26,34 +25,8 @@ const Contact = () => {
     });
   };
 
-  // Intersection Observer to detect when section is in view
+  // Typing effect for location (loops continuously)
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasViewed) {
-            setHasViewed(true);
-          }
-        });
-      },
-      { threshold: 0.8 } // Trigger when 80% of section is visible
-    );
-
-    const section = document.getElementById('contact');
-    if (section) {
-      observer.observe(section);
-    }
-
-    return () => {
-      if (section) {
-        observer.unobserve(section);
-      }
-    };
-  }, [hasViewed]);
-
-  // Typing effect for location (only starts when section is viewed)
-  useEffect(() => {
-    if (!hasViewed) return; // Don't run animation until section is viewed
     const currentPhrase = locationPhrases[locationPhraseIndex];
     const typingSpeed = isDeleting ? 50 : 100;
     const pauseAfterTyping = 1500; // Pause after typing complete phrase
@@ -61,20 +34,15 @@ const Contact = () => {
 
     const handleTyping = () => {
       if (!isDeleting && displayedLocation === currentPhrase) {
-        // Finished typing current phrase
-        if (locationPhraseIndex === locationPhrases.length - 1) {
-          // Last phrase - keep it and stop
-          return;
-        }
-        // Start deleting after pause
+        // Finished typing current phrase, start deleting after pause
         setTimeout(() => setIsDeleting(true), pauseAfterTyping);
         return;
       }
 
       if (isDeleting && displayedLocation === '') {
-        // Finished deleting, move to next phrase
+        // Finished deleting, move to next phrase (loop back to start)
         setIsDeleting(false);
-        setLocationPhraseIndex((prev) => prev + 1);
+        setLocationPhraseIndex((prev) => (prev + 1) % locationPhrases.length);
         setTimeout(() => {}, pauseAfterDeleting);
         return;
       }
@@ -89,7 +57,7 @@ const Contact = () => {
 
     const timeout = setTimeout(handleTyping, typingSpeed);
     return () => clearTimeout(timeout);
-  }, [displayedLocation, locationPhraseIndex, isDeleting, hasViewed]);
+  }, [displayedLocation, locationPhraseIndex, isDeleting]);
 
   // Cursor blink effect
   useEffect(() => {

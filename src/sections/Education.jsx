@@ -10,6 +10,7 @@ const Education = () => {
       location: 'State College, PA, USA',
       period: 'Aug 2024 - May 2026',
       gpa: '4.0 / 4.0',
+      logo: '/psu-logo.png',
       coursework: [
         'Network Management & Security',
         'Software Security',
@@ -22,10 +23,12 @@ const Education = () => {
     {
       degree: 'Bachelor of Technology in Information Technology',
       minor: 'Cybersecurity and Digital Forensics',
-      school: 'DY Patil University',
+      school: 'Ramrao Adik Institute of Technology',
       location: 'Navi Mumbai, India',
       period: 'Nov 2020 - May 2024',
-      gpa: '3.2 / 4.0',
+      gpa: '7.9 / 10',
+      logo: '/rait-logo.png',
+      logoBg: true,
       coursework: [
         'Ethical Hacking',
         'Digital Forensics',
@@ -56,15 +59,26 @@ const Education = () => {
             style={{ animationDelay: `${index * 0.15}s` }}
           >
             <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
-              <div>
-                <h3 className="text-2xl font-bold text-white mb-2">{edu.degree}</h3>
-                {edu.minor && (
-                  <p className="text-lg text-text-light mb-3">
-                    <span className="text-electric-blue/80">Minor:</span> {edu.minor}
-                  </p>
+              <div className="flex gap-4 items-start">
+                {edu.logo && (
+                  <div className={`flex-shrink-0 w-16 h-16 md:w-20 md:h-20 flex items-center justify-center ${edu.logoBg ? 'bg-white rounded-lg p-2' : ''}`}>
+                    <img
+                      src={edu.logo}
+                      alt={`${edu.school} logo`}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
                 )}
-                <p className="text-xl text-electric-blue mb-1">{edu.school}</p>
-                <p className="text-text-slate">{edu.location}</p>
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-2">{edu.degree}</h3>
+                  {edu.minor && (
+                    <p className="text-lg text-text-light mb-3">
+                      <span className="text-electric-blue/80">Minor:</span> {edu.minor}
+                    </p>
+                  )}
+                  <p className="text-xl text-electric-blue mb-1">{edu.school}</p>
+                  <p className="text-text-slate">{edu.location}</p>
+                </div>
               </div>
               <div className="text-right">
                 <p className="text-text-light font-semibold">{edu.period}</p>

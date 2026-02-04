@@ -9,15 +9,20 @@ const WorkExperience = () => {
       course: 'CYBER 362: Cybersecurity Analytics',
       company: 'Pennsylvania State University',
       location: 'State College, PA, USA',
+      logo: '/psu-logo.png',
       period: 'Aug 2025 - Present',
       type: 'Part-time',
       achievements: [
-        'Assisted professor in delivering course materials and managing course logistics for Cybersecurity Analytics',
-        'Provided technical support and guidance to students during lab sessions using Splunk and Wireshark',
-        'Graded assignments and provided constructive feedback to enhance student learning',
-        'Conducted office hours to help students with coursework and project questions',
+        'Led hands-on security operations and network forensics labs using Splunk, Wireshark, and packet analysis tools',
+        'Guided students in identifying suspicious traffic, anomalies, and intrusion patterns in real-world datasets',
+        'Helped improve incident detection speed by 30% through structured investigation workflows',
+        'Mentored 50+ students in Python scripting for automation, log parsing, and security analytics',
+        'Supported fault isolation and root-cause analysis for network and system failures',
+        'Reviewed and graded 100+ cybersecurity and networking labs to improve detection logic and configurations',
+        'Reduced repeated misconfigurations by 20% through targeted technical feedback',
+        'Assisted in developing lab documentation and troubleshooting guides',
       ],
-      technologies: ['Splunk', 'Wireshark', 'Canvas LMS', 'Python'],
+      technologies: ['Splunk', 'Wireshark', 'Python', 'Canvas LMS', 'Microsoft 365'],
     },
   ];
 
@@ -48,15 +53,26 @@ const WorkExperience = () => {
               >
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6 pb-6 border-b border-electric-blue/20">
-              <div className="flex-1">
-                <h3 className="text-2xl font-bold text-white mb-2">{exp.title}</h3>
-                {exp.course && (
-                  <p className="text-lg text-text-light mb-3">
-                    <span className="text-electric-blue/80">Course:</span> {exp.course}
-                  </p>
+              <div className="flex-1 flex gap-4 items-start">
+                {exp.logo && (
+                  <div className="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 flex items-center justify-center">
+                    <img
+                      src={exp.logo}
+                      alt={`${exp.company} logo`}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
                 )}
-                <p className="text-xl text-electric-blue mb-1">{exp.company}</p>
-                <p className="text-text-slate">{exp.location}</p>
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-2">{exp.title}</h3>
+                  {exp.course && (
+                    <p className="text-lg text-text-light mb-3">
+                      <span className="text-electric-blue/80">Course:</span> {exp.course}
+                    </p>
+                  )}
+                  <p className="text-xl text-electric-blue mb-1">{exp.company}</p>
+                  <p className="text-text-slate">{exp.location}</p>
+                </div>
               </div>
               <div className="text-right">
                 <p className="text-text-light font-semibold mb-1">{exp.period}</p>

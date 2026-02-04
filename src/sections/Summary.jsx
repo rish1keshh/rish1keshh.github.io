@@ -5,15 +5,27 @@ import Button from '../components/Button';
 import ConnectionSnapshot from '../components/ConnectionSnapshot';
 
 const Summary = ({ onTypingComplete, typingComplete }) => {
-  const skills = [
-    'Blue Team Operations',
-    'SIEM & Log Analysis',
-    'Incident Response',
-    'Network Traffic Analysis',
-    'Threat Detection',
-    'Security Monitoring',
-    'Python & Automation',
-    'DNS Security',
+  const skillCategories = [
+    {
+      title: 'Security Operations',
+      icon: '🔐',
+      skills: ['Threat Detection', 'Incident Response', 'SIEM & Log Analysis', 'Alert Triage'],
+    },
+    {
+      title: 'Network & Infrastructure',
+      icon: '🌐',
+      skills: ['Network Security', 'Network Traffic Analysis', 'DNS Security', 'TCP/IP & Routing', 'Firewall Fundamentals'],
+    },
+    {
+      title: 'Systems & Engineering',
+      icon: '⚙️',
+      skills: ['Linux Administration', 'Security Monitoring', 'System Hardening', 'Infrastructure Troubleshooting'],
+    },
+    {
+      title: 'Automation & Analysis',
+      icon: '🤖',
+      skills: ['Python & Automation', 'Log Parsing'],
+    },
   ];
 
   // Typing animation state
@@ -361,10 +373,10 @@ const Summary = ({ onTypingComplete, typingComplete }) => {
               transitionDelay: '0.2s'
             }}
           >
-            Defending Digital Infrastructure
+            Network Security Engineer
             <span className="hidden sm:inline"> | </span>
             <span className="sm:hidden"><br /></span>
-            Blue Team Operations
+            Detection, Monitoring & Defense
           </p>
 
           {/* Certification Badges */}
@@ -413,7 +425,7 @@ const Summary = ({ onTypingComplete, typingComplete }) => {
               transitionDelay: '0.5s'
             }}
           >
-            I am a cybersecurity graduate student at Penn State focused on blue team operations and threat detection. I learn by building labs, breaking systems safely, and studying how real attacks unfold. I am early in my career, deeply curious, and committed to growing into a security professional who defends with intention and clarity.
+            I am a cybersecurity graduate student graduating in May 2026, focused on network security, threat detection, and defensive operations. I build hands-on labs, analyze real network traffic, and design monitoring systems to understand how attacks unfold and how to prevent them. As an early-career professional, I am committed to developing strong technical foundations and contributing to security teams with clarity and discipline.
           </p>
 
           {/* Buttons with enhanced effects - Stack on mobile, side-by-side on larger screens */}
@@ -468,23 +480,27 @@ const Summary = ({ onTypingComplete, typingComplete }) => {
                 Core Competencies
               </h3>
 
-              {/* Bento box layout with varied sizes */}
-              <div className="grid grid-cols-2 md:grid-cols-4 md:grid-rows-3 gap-4">
-                {skills.map((skill, index) => (
+              {/* Skills by category */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {skillCategories.map((category, index) => (
                   <div
                     key={index}
-                    className={`
-                      glass glass-hover p-4 rounded-lg
-                      transition-all duration-300
-                      hover:scale-105 hover:z-10
-                      hover:shadow-2xl hover:shadow-electric-blue/20
-                      flex items-center justify-center text-center
-                      ${index === 0 ? 'md:col-span-2 md:row-span-2' : ''}
-                      ${index === 1 ? 'md:col-span-2' : ''}
-                      ${index === 4 ? 'md:col-span-2 md:row-span-2' : ''}
-                    `}
+                    className="glass glass-hover p-5 rounded-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-electric-blue/20"
                   >
-                    <p className="text-text-light font-medium">{skill}</p>
+                    <h4 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
+                      <span>{category.icon}</span>
+                      {category.title}
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {category.skills.map((skill, idx) => (
+                        <span
+                          key={idx}
+                          className="px-3 py-1 bg-electric-blue/10 border border-electric-blue/30 rounded-full text-text-light text-sm"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 ))}
               </div>

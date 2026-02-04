@@ -6,7 +6,9 @@ const Card = ({
   hover = true,
   glow = false,
   tilt = false,
-  variant = 'default'
+  variant = 'default',
+  onClick,
+  ...props
 }) => {
   const variants = {
     default: 'glass',
@@ -28,6 +30,8 @@ const Card = ({
         transformStyle: 'preserve-3d',
         perspective: '1000px',
       } : {}}
+      onClick={onClick}
+      {...props}
     >
       {children}
     </div>
